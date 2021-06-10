@@ -12,6 +12,9 @@ public class Fournisseur {
     public int getId() {
         return id;
     }
+    public String getSqlId(){
+        return "'"+this.id +"'";
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -20,6 +23,10 @@ public class Fournisseur {
     public String getNom() {
         return nom;
     }
+    public String getSqlNom(){
+        return "'"+this.nom +"'";
+    }
+
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -27,9 +34,8 @@ public class Fournisseur {
 
     @Override
     public String toString() {
-        return "Fournisseur{" +
+        return "Fournisseur " +
                 "id=" + id +
-                ", nom='" + nom + '\'' +
-                '}';
+                ", nom= " + nom ;
     }
 }
