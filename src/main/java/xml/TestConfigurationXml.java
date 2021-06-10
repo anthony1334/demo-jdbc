@@ -4,6 +4,8 @@ import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
+import java.util.Enumeration;
+import java.util.Iterator;
 
 
 public class TestConfigurationXml {
@@ -17,6 +19,12 @@ public class TestConfigurationXml {
             e.printStackTrace();
         }
         String configuration = config.getString("database.host");
+        Iterator<String> key = config.getKeys();
+        while (key.hasNext()){
+            String cle = key.next();
+            String value = config.getString(cle);
+            System.out.println(cle +" :" + value);
+        }
 
 
 
